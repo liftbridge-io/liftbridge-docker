@@ -1,5 +1,5 @@
 # liftbridge-docker
-
+[![GitHub](https://img.shields.io/github/license/dgzlopes/liftbridge-docker)](https://github.com/dgzlopes/liftbridge-docker/blob/master/LICENSE)
 > **WARNING**: This container is intended for testing and/or development purposes!
 
 Liftbridge provides lightweight, fault-tolerant message streams by implementing a durable stream augmentation for the NATS messaging system. 
