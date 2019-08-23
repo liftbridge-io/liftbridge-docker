@@ -4,7 +4,7 @@
 
 Liftbridge provides lightweight, fault-tolerant message streams by implementing a durable stream augmentation for the NATS messaging system. 
 
-This is the Git repo of the Docker image embedding [NATS](https://https://nats.io/) next to [Liftbridge](https://github.com/liftbridge-io/liftbridge). 
+This is the Git repo of the Docker image embedding [NATS](https://nats.io/) next to [Liftbridge](https://github.com/liftbridge-io/liftbridge). 
 
 
 ## Usage
