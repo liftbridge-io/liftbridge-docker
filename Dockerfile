@@ -10,8 +10,8 @@ COPY --from=build-base /go/bin/liftbridge /usr/local/bin/liftbridge
 COPY --from=build-base /go/bin/nats-server /usr/local/bin/nats-server
 COPY nats-server.conf nats-server.conf
 
-# Expose Liftbridge and Nats: client and management
-EXPOSE 9292 4222 8222
+# Expose Liftbridge and Nats: client, management and routing
+EXPOSE 9292 4222 8222 6222
 VOLUME "/tmp/liftbridge/liftbridge-default"
 
 COPY script_runner.sh script_runner.sh

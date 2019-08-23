@@ -10,8 +10,8 @@ This is the Git repo of the Docker image embedding [NATS](https://nats.io/) next
 ## Usage
 Using the container can be done like this:
 ```
-$ docker pull dgzlopes/liftbridge-docker:v0.0.1
-$ docker run -d --name=liftbridge-main -p 4222:4222 -p 9292:9292 -p 8222:8222 dgzlopes/liftbridge-docker:v0.0.1
+$ docker pull dgzlopes/liftbridge-docker:v0.0.2
+$ docker run -d --name=liftbridge-main -p 4222:4222 -p 9292:9292 -p 8222:8222 -p 6222:6222 dgzlopes/liftbridge-docker:v0.0.2
 ```
 
 This will bootup the container and start both the NATS and Liftbridge servers. We can check the logs to see if the container booted properly:
@@ -44,6 +44,7 @@ Liftbridge server exposes:
 NATS server exposes:
 - 4222 for clients.
 - 8222 as an HTTP management port for information reporting.
+- 6222 is a routing port for clustering.
 
 ### Default NATS Configuration file
 
@@ -53,5 +54,25 @@ port: 4222
 
 # HTTP monitoring port
 monitor_port: 8222
+
+# This is for clustering multiple servers together.
+cluster {
+
+  # Route connections to be received on any interface on port 6222
+  port: 6222
+
+  # Routes are protected, so need to use them with --routes flag
+  # e.g. --routes=nats-route://ruser:T0pS3cr3t@otherdockerhost:6222
+  authorization {
+    user: ruser
+    password: T0pS3cr3t
+    timeout: 0.75
+  }
+
+  # Routes are actively solicited and connected to from this server.
+  # This Docker image has none by default, but you can pass a
+  # flag to the nats-server docker image to create one to an existing server.
+  routes = []
+}
 ```
 
