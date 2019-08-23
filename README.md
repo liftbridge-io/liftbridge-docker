@@ -10,8 +10,8 @@ This is the Git repo of the Docker image embedding [NATS](https://nats.io/) next
 ## Usage
 Using the container can be done like this:
 ```
-$ docker pull dgzlopes/liftbridge-docker:v0.0.2
-$ docker run -d --name=liftbridge-main -p 4222:4222 -p 9292:9292 -p 8222:8222 -p 6222:6222 dgzlopes/liftbridge-docker:v0.0.2
+$ docker pull dgzlopes/liftbridge-docker
+$ docker run -d --name=liftbridge-main -p 4222:4222 -p 9292:9292 -p 8222:8222 -p 6222:6222 dgzlopes/liftbridge-docker
 ```
 
 This will bootup the container and start both the NATS and Liftbridge servers. We can check the logs to see if the container booted properly:
