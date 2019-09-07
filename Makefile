@@ -1,12 +1,12 @@
 
 .PHONY: build
 build:
-	docker build -t dgzlopes/liftbridge-docker:v0.0.2 -t dgzlopes/liftbridge-docker:latest . --no-cache
+	docker build -t dgzlopes/liftbridge-docker:v0.0.3 -t dgzlopes/liftbridge-docker:latest . --no-cache
 
 .PHONY: publish
 publish:
 	docker login
-	docker push dgzlopes/liftbridge-docker:v0.0.2
+	docker push dgzlopes/liftbridge-docker:v0.0.3
 	docker push dgzlopes/liftbridge-docker:latest
 
 .PHONY: run
