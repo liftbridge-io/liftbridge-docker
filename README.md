@@ -1,20 +1,26 @@
 # liftbridge-docker
-[![GitHub](https://img.shields.io/github/license/dgzlopes/liftbridge-docker)](https://github.com/dgzlopes/liftbridge-docker/blob/master/LICENSE)
-> **WARNING**: This container is intended for testing and/or development purposes!
+[![GitHub](https://img.shields.io/github/license/liftbridge-io/liftbridge-docker)](https://github.com/liftbridge-io/liftbridge-docker/blob/master/LICENSE)
+> **WARNING**: This container is intended for testing and/or development
+> purposes!
 
-Liftbridge provides lightweight, fault-tolerant message streams by implementing a durable stream augmentation for the NATS messaging system. 
+Liftbridge provides lightweight, fault-tolerant message streams by implementing
+a durable stream augmentation for the NATS messaging system. 
 
-This is the Git repo of the Docker image embedding [NATS](https://nats.io/) next to [Liftbridge](https://github.com/liftbridge-io/liftbridge). 
+This is the Git repo of the Docker image embedding [NATS](https://nats.io/)
+next to [Liftbridge](https://github.com/liftbridge-io/liftbridge). 
 
 
 ## Usage
+
 Using the container can be done like this:
+
 ```
-$ docker pull dgzlopes/liftbridge-docker
-$ docker run -d --name=liftbridge-main -p 4222:4222 -p 9292:9292 -p 8222:8222 -p 6222:6222 dgzlopes/liftbridge-docker
+$ docker pull liftbridge/liftbridge-docker
+$ docker run -d --name=liftbridge-main -p 4222:4222 -p 9292:9292 -p 8222:8222 -p 6222:6222 liftbridge/liftbridge-docker
 ```
 
-This will bootup the container and start both the NATS and Liftbridge servers. We can check the logs to see if the container booted properly:
+This will bootup the container and start both the NATS and Liftbridge servers.
+We can check the logs to see if the container booted properly:
 
 ```
 $ docker logs liftbridge-main
@@ -33,11 +39,13 @@ time="2019-08-21 11:26:15" level=info msg="Server became metadata leader, perfor
 ```
 
 ### Volume
+
 Optionally you can specify the mount point with: 
 
 ```--volume=/tmp/host/liftbridge:/tmp/liftbridge/liftbridge-default  ```
 
 ### Ports
+
 Liftbridge server exposes:
 - 9292 for clients.
 
