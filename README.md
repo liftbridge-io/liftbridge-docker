@@ -9,6 +9,8 @@ a durable stream augmentation for the NATS messaging system.
 This is the Git repo of the Docker image embedding [NATS](https://nats.io/)
 next to [Liftbridge](https://github.com/liftbridge-io/liftbridge). 
 
+***This repository has been archived since the Docker image has been [integrated directly into the Liftbridge repository](https://github.com/liftbridge-io/liftbridge/tree/master/docker/dev-standalone). The Docker image is now available as [liftbridge/standalone-dev](https://hub.docker.com/r/liftbridge/standalone-dev).***
+
 
 ## Usage
 
